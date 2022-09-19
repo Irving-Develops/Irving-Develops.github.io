@@ -723,7 +723,20 @@ input, select, textarea {
 		.bullets ul {
 			width: 50%;
 		}
-
+		.skills {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 40px;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		.skills p {
+			text-align: center;
+		}
+		.skills img {
+			width: 100px;
+		}
 		@media screen and (max-width: 736px) {
 
 			.image.main {
