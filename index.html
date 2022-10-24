@@ -53,10 +53,10 @@
 					function isValid() {
 					var valid = true;
 
-					valid &= fieldValidation(fields.name, isNotEmpty);
-					valid &= fieldValidation(fields.email, isNotEmpty);
+					valid &= fieldValidation(fields.user_name, isNotEmpty);
+					valid &= fieldValidation(fields.user_email, isNotEmpty);
 					valid &= fieldValidation(fields.message, isNotEmpty);
-					valid &= fieldValidation(fields.email, isEmail);
+					valid &= fieldValidation(fields.user_email, isEmail);
 
 					return valid;
 					}
@@ -262,7 +262,7 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form id="contact-form">
+								<form id="contact-form" onsubmit="return false">
 									<input type="hidden" name="contact_number">
 									<div class="fields">
 										<div class="field half">
