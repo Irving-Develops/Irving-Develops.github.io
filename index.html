@@ -37,18 +37,18 @@
 						return regex.test(String(email).toLowerCase());
 					}
 
-					// function fieldValidation(field, validationFunction) {
-					// if (field === null) return false;
+					function fieldValidation(field, validationFunction) {
+					if (field === null) return false;
 
-					// let isFieldValid = validationFunction(field.value)
-					// if (!isFieldValid) {
-					// field.className = 'placeholderRed';
-					// } else {
-					// field.className = '';
-					// }
+					let isFieldValid = validationFunction(field.value)
+					if (!isFieldValid) {
+					field.className = 'placeholderRed';
+					} else {
+					field.className = '';
+					}
 
-					// return isFieldValid;
-					// }
+					return isFieldValid;
+					}
 
 					function isValid() {
 					var valid = true;
