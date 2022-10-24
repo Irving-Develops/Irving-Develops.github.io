@@ -13,8 +13,29 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-		<script src="assets/js/contactForm.js"></script>
-
+		<script type="text/javascript">
+			(function() {
+				// https://dashboard.emailjs.com/admin/account
+				emailjs.init('YOUR_PUBLIC_KEY');
+			})();
+		</script>
+		<script type="text/javascript">
+			window.onload = function () {
+				document.getElementById('contact-form').addEventListener('submit', function (event) {
+					event.preventDefault();
+					// generate a five digit number for the contact_number variable
+					this.contact_number.value = Math.random() * 100000 | 0;
+					// these IDs from the previous steps
+					emailjs.sendForm('contact_service', 'contact_form', this)
+						.then(function () {
+							console.log('SUCCESS!');
+						}, function (error) {
+							console.log('FAILED...', error);
+						});
+				});
+			}
+		</script>
+		
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -181,7 +202,7 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" id=""contact-form>
+								<form id=""contact-form>
 									<input type="hidden" name="contact_number">
 									<div class="fields">
 										<div class="field half">
@@ -198,7 +219,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="submit" value="Send" class="primary" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
