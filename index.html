@@ -64,8 +64,7 @@
 					function sendContact() {
 					if(isValid()) {
 					// let usr = new User(name.value, email.value, message.value);
-							    			// generate a five digit number for the contact_number variable
-					this.contact_number.value = Math.random() * 100000 | 0;
+					// generate a five digit number for the contact_number variable
 					// these IDs from the previous steps
 					emailjs.sendForm('service_n74l0c9', 'contact_form', this)
 						.then(function () {
@@ -82,6 +81,7 @@
 
 		    		document.getElementById('contact-form').addEventListener('submit', function (event) {
 		    			event.preventDefault();
+						this.contact_number.value = Math.random() * 100000 | 0;
 						sendContact()
 		    			// generate a five digit number for the contact_number variable
 		    			// this.contact_number.value = Math.random() * 100000 | 0;
