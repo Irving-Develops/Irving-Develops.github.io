@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+		<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 		<script type="text/javascript">
 			(function() {
 				// https://dashboard.emailjs.com/admin/account
@@ -20,7 +20,7 @@
 			})();
 		</script>
 		<script type="text/javascript" src="assets/js/contactForm.js">
-		</script>
+		</script> -->
 		
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -193,7 +193,7 @@
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
-											<input type="text" name="from_name" id="name" />
+											<input type="text" name="from_name" id="from_name" />
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
@@ -333,6 +333,32 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+			<script type="text/javascript">
+				emailjs.init('CCmiUEjc9XRCALe-J')
+			</script>
+			<script>
+				const btn = document.getElementById('button');
+
+				document.getElementById('form')
+				.addEventListener('submit', function(event) {
+				event.preventDefault();
+
+				btn.value = 'Sending...';
+
+				const serviceID = 'default_service';
+				const templateID = 'template_nhrq27f';
+
+				emailjs.sendForm(serviceID, templateID, this)
+				.then(() => {
+				btn.value = 'Send Email';
+				alert('Sent!');
+				}, (err) => {
+				btn.value = 'Send Email';
+				alert(JSON.stringify(err));
+				});
+				});
+			</script>
 			<!-- <script src="assets/js/contactForm.js"></script> -->
 
 	</body>
