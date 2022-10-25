@@ -112,7 +112,7 @@ window.onload = function () {
         this.contact_number.value = Math.random() * 100000 | 0;
         // these IDs from the previous steps
 
-        if(isValid) {
+        if(isValid()) {
             let res = await emailjs.sendForm('service_n74l0c9', 'contact_form', this)
             if(res.ok){
                 alert("SUCCESS")
