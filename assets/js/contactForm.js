@@ -1,39 +1,4 @@
 const fields = {}
-
-// document.addEventListener('DOMContentLoaded', function() {
-
-// function isValid() {
-//     var valid = true;
-
-//     valid &= fieldValidation(fields.name, isNotEmpty);
-//     valid &= fieldValidation(fields.email, isNotEmpty);
-//     valid &= fieldValidation(fields.message, isNotEmpty);
-//     valid &= fieldValidation(fields.email, isEmail);
-
-//     return valid;
-// }
-
-// class User {
-//     constructor(name, email, message) {
-//         this.name = name;
-//         this.email = email;
-//         this.message = message;
-//     }
-// }
-
-// function sendContact() {
-//     if(isValid()) {
-//         let usr = new User(name.value, email.value, message.value);
-//         alert("success")
-//     }else {
-//         alert("error")
-//     }
-
-// }
-
-// })\
-
-
 window.onload = function () {
     let errors = []
 
@@ -116,23 +81,8 @@ window.onload = function () {
         return regex.test(String(email).toLowerCase());
     }
 
-    // function fieldValidation(field, validationFunction) {
-    //     if (field === null || typeof field === 'undefined') return false;
-    //     console.log(field, validationFunction(field.value))
-    //     let isFieldValid = validationFunction(field.value)
-    //     if (!isFieldValid) {
-    //         field.className = 'placeholderRed';
-    //     } else {
-    //         field.className = '';
-    //     }
-
-    //     return isFieldValid;
-    // }
-
     document.getElementById('contact-form').addEventListener('submit', async function(event){
         this.contact_number.value = Math.random() * 100000 | 0;
-        // these IDs from the previous steps
-
         if(isValid()) {
             let res = await emailjs.sendForm('service_n74l0c9', 'contact_form', this)
             alert("SUCCESS")
@@ -140,10 +90,5 @@ window.onload = function () {
             alert(errors.join("\n"))
         }
         errors = []
-            // .then(function () {
-            //     alert('SUCCESS!');
-            // }, function (error) {
-            //     alert('FAILED...', error);
-            // });
     })
 }

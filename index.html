@@ -11,30 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
 		    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-		    <!-- <script type="text/javascript">
-		    	(function () {
-		    		// https://dashboard.emailjs.com/admin/account
-		    		emailjs.init('CCmiUEjc9XRCALe-J');
-		    	})();
-		    </script> -->
-		    <!-- <script type="text/javascript">
-		    	window.onload = function () {
-		    		document.getElementById('contact-form').addEventListener('submit', function (event) {
-		    			event.preventDefault();
-		    			// generate a five digit number for the contact_number variable
-		    			this.contact_number.value = Math.random() * 100000 | 0;
-		    			// these IDs from the previous steps
-		    			emailjs.sendForm('service_n74l0c9', 'contact_form', this)
-		    				.then(function () {
-		    					alert('SUCCESS!');
-		    				}, function (error) {
-		    					alert('FAILED...', error);
-		    				});
-		    		});
-		    	}
-		    </script> -->
 			<script type="text/javascript" src="assets/js/contactForm.js"></script>
 		
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -70,7 +47,7 @@
 					<div id="main">
 
 						<!-- Intro -->
-							<article id="intro">
+							<article id="about">
 								<h2 class="major">About</h2>
 								<span style="width: 50%" class="image main"><img src="images/pic01.jpg" alt="" /></span>
 								<p>Hi, i'm Irving. I'm a software engineer who recently graduated from App Academy. During my time at App
@@ -348,33 +325,5 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-			<script type="text/javascript">
-				emailjs.init('CCmiUEjc9XRCALe-J')
-			</script>
-			<script>
-				const btn = document.getElementById('button');
-
-				document.getElementById('form')
-				.addEventListener('submit', function(event) {
-				event.preventDefault();
-
-				btn.value = 'Sending...';
-
-				const serviceID = 'default_service';
-				const templateID = 'template_nhrq27f';
-
-				emailjs.sendForm(serviceID, templateID, this)
-				.then(() => {
-				btn.value = 'Send Email';
-				alert('Sent!');
-				}, (err) => {
-				btn.value = 'Send Email';
-				alert(JSON.stringify(err));
-				});
-				});
-			</script> -->
-			<!-- <script src="assets/js/contactForm.js"></script> -->
-
 	</body>
 </html>
