@@ -38,7 +38,7 @@ window.onload = function () {
     fields.name = document.getElementById('name');
     fields.email = document.getElementById('email');
     fields.message = document.getElementById('message');
-    
+
         (function() {
             // https://dashboard.emailjs.com/admin/account
             emailjs.init('CCmiUEjc9XRCALe-J');
@@ -101,10 +101,10 @@ window.onload = function () {
         return isFieldValid;
     }
 
-    document.getElementById('contact-form').addEventListener('submit', function(event){
+    document.getElementById('contact-form').addEventListener('submit', async function(event){
         this.contact_number.value = Math.random() * 100000 | 0;
         // these IDs from the previous steps
-        let res = emailjs.sendForm('service_n74l0c9', 'contact_form', this)
+        let res = await emailjs.sendForm('service_n74l0c9', 'contact_form', this)
         console.log(res, "response")
             // .then(function () {
             //     alert('SUCCESS!');
