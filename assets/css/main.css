@@ -306,6 +306,10 @@ input, select, textarea {
 		margin: 0 0 2rem 0;
 	}
 
+	.placeholderRed {
+		border: 1px solid red;
+	}
+
 		form > :last-child {
 			margin-bottom: 0;
 		}
