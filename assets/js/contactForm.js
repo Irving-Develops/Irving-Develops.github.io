@@ -1,4 +1,5 @@
 const fields = {}
+const errors = []
 
 // document.addEventListener('DOMContentLoaded', function() {
 
@@ -45,13 +46,19 @@ window.onload = function () {
         })();
     
         function isNotEmpty(value) {
-            if (value === null || typeof value === 'undefined') return false;
+            if (value === null || typeof value === 'undefined') {
+                errors.push("Field cannot be empty")
+                return false;
+            }
             return (value.length > 0);
         }
 
         function isEmail(email) {
             let regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-            return regex.test(String(email).toLowerCase());
+            if (!regex.test(String(email).toLowerCase())) {
+                errors.push("Invalid email")
+            }
+            return true;
         }
 
         function fieldValidation(field, validationFunction) {
@@ -104,8 +111,15 @@ window.onload = function () {
     document.getElementById('contact-form').addEventListener('submit', async function(event){
         this.contact_number.value = Math.random() * 100000 | 0;
         // these IDs from the previous steps
-        let res = await emailjs.sendForm('service_n74l0c9', 'contact_form', this)
-        console.log(res, "response")
+
+        if(isValid) {
+            let res = await emailjs.sendForm('service_n74l0c9', 'contact_form', this)
+            if(res.ok){
+                alert("SUCCESS")
+            }
+        }else {
+            alert(errors.join("\n"))
+        }
             // .then(function () {
             //     alert('SUCCESS!');
             // }, function (error) {
